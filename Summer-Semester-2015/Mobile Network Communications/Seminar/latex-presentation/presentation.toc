@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Motivation/Problem}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{Overview of Solution}{4}{0}{1}
+\beamer@sectionintoc {3}{Working Structure}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{Collaborative Download}{6}{0}{2}
+\beamer@subsectionintoc {3}{2}{Working Algorithm}{9}{0}{2}
+\beamer@sectionintoc {4}{Results/Evaluation}{12}{0}{3}
+\beamer@subsectionintoc {4}{1}{Demonstration}{12}{0}{3}
+\beamer@subsectionintoc {4}{2}{Discussion}{14}{0}{3}

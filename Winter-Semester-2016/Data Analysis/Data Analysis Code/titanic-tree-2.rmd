@@ -1,0 +1,130 @@
+
+# library(rpart)
+install.packages('ggplot2')
+
+X <- read.csv('titanic.csv',colClasses=c("NULL",NA,NA,NA,"NULL"))
+Y <- read.csv('titanic.csv',colClasses=c("NULL","NULL","NULL","NULL",NA))
+## 75% of the sample size
+smp_size <- floor(0.75 * nrow(X))
+
+## set the seed to make your partition reproductible
+set.seed(123)
+train_ind <- sample(seq_len(nrow(X)), size = smp_size)
+Xtrain <- X[train_ind, ]
+Xtest <- X[-train_ind, ]
+
+Ytrain <- Y[train_ind, ]
+Ytest <- Y[-train_ind, ]
+summary(Xtrain)
+
+# library(rpart)
+#plot tree
+# install.packages('rpart.plot')
+library(rpart.plot)
+
+# has to be a dataframe to work with this package
+Xtrain_df = as.data.frame(Xtrain)
+# has to be a dataframe to work with this package
+Xtest_df = as.data.frame(Xtest)
+# Create a classification tree based on all inputs
+tree = rpart(formula = Ytrain~., Xtrain_df, method="class")
+rpart.plot(tree, main="Titanic Classification Tree")
+
+#predictions
+p = predict(tree, Xtest_df, type="class")
+#calculate misclassification rate
+1-sum(diag(table(Ytest,p)))/sum(table(Ytest,p))
+# summarize accuracy
+table(Ytest, p)
+
+XFemales <- as.data.frame(read.csv('titanic.csv',colClasses=c("NULL",NA,NA,NA,"NULL")))
+YFemales <- as.data.frame(read.csv('titanic.csv',colClasses=c("NULL","NULL",NA,"NULL",NA)))
+XFemales <- XFemales[ which(XFemales$Sex == "Female"),]
+YFemales <- YFemales[ which(YFemales$Sex == "Female"),]
+drops <- c("Sex")
+YFemales <- YFemales[ , !(names(YFemales) %in% drops)]
+#YFemales <- subset(YFemales, select=-c(Sex))
+
+tree = rpart(formula = YFemales~., XFemales, method="class")
+rpart.plot(tree, main="Titanic Classification Tree Females")
+
+XMales <- as.data.frame(read.csv('titanic.csv',colClasses=c("NULL",NA,NA,NA,"NULL")))
+YMales <- as.data.frame(read.csv('titanic.csv',colClasses=c("NULL","NULL",NA,"NULL",NA)))
+XMales <- XMales[ which(XMales$Sex == "Male"),]
+YMales <- YMales[ which(YMales$Sex == "Male"),]
+drops <- c("Sex")
+YMales <- YMales[ , !(names(YMales) %in% drops)]
+#YMales <- subset(YMales, select=-c(Sex))
+tree = rpart(formula = YMales~., XMales, method="class")
+rpart.plot(tree, main="Titanic Classification Tree Males")
+
+library(ggplot2)
+AllData <- as.data.frame(read.csv('titanic.csv',colClasses=c("NULL",NA,NA,NA,NA)))
+meanError = 0
+for(n_folds in 2:10){
+errorList = 0
+folds_i <- sample(rep(1:n_folds, length.out = dim(X)))
+for (k in 1:n_folds) {
+    test_i <- which(folds_i == k)
+    train_xy <- AllData[-test_i, ]
+    test_xy <- AllData[test_i, ]
+    Ytrain = train_xy$Survived
+    drops <- c("Survived")
+    XTrain <- train_xy[ , !(names(train_xy) %in% drops)]
+    
+    Ytest = test_xy$Survived
+    drops <- c("Survived")
+    Xtest <- test_xy[ , !(names(test_xy) %in% drops)]
+    
+    # Create a classification tree based on all inputs
+    tree = rpart(formula = Ytrain~., XTrain, method="class")
+    #predictions
+    p = predict(tree, Xtest, type="class")
+    #calculate misclassification rate
+    errorList <- append(errorList, 1-sum(diag(table(Ytest,p)))/sum(table(Ytest,p)))
+}
+meanError <- c(meanError, mean(errorList))
+}
+meanError <- meanError[2:10]
+errors <- data.frame(Mean = meanError, Folds = 2:10)
+ggplot(errors, aes(Folds, Mean)) + 
+    geom_line() +
+    geom_point() + 
+    labs(title = "Mean Error per Fold") +
+    labs(x = "No. of Folds") +
+    labs(y = "Mean Error")
+
+# ggplot2 examples
+library(ggplot2) 
+
+# create factors with value labels 
+mtcars$gear <- factor(mtcars$gear,levels=c(3,4,5),
+  	labels=c("3gears","4gears","5gears")) 
+mtcars$am <- factor(mtcars$am,levels=c(0,1),
+  	labels=c("Automatic","Manual")) 
+mtcars$cyl <- factor(mtcars$cyl,levels=c(4,6,8),
+   labels=c("4cyl","6cyl","8cyl")) 
+
+# Kernel density plots for mpg
+# grouped by number of gears (indicated by color)
+qplot(mpg, data=mtcars, geom="density", fill=gear, alpha=I(.5), 
+   main="Distribution of Gas Milage", xlab="Miles Per Gallon", 
+   ylab="Density")
+
+# Scatterplot of mpg vs. hp for each combination of gears and cylinders
+# in each facet, transmittion type is represented by shape and color
+qplot(hp, mpg, data=mtcars, shape=am, color=am, 
+   facets=gear~cyl, size=I(3),
+   xlab="Horsepower", ylab="Miles per Gallon") 
+
+# Separate regressions of mpg on weight for each number of cylinders
+qplot(wt, mpg, data=mtcars, geom=c("point", "smooth"), 
+   method="lm", formula=y~x, color=cyl, 
+   main="Regression of MPG on Weight", 
+   xlab="Weight", ylab="Miles per Gallon")
+
+# Boxplots of mpg by number of gears 
+# observations (points) are overlayed and jittered
+qplot(gear, mpg, data=mtcars, geom=c("boxplot", "jitter"), 
+   fill=gear, main="Mileage by Gear Number",
+   xlab="", ylab="Miles per Gallon")

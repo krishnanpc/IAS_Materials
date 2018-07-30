@@ -1,0 +1,13 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{What is a Gradient}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{Gradient in Neural Networks}{4}{0}{1}
+\beamer@sectionintoc {3}{Calculating The Gradient}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{Computing The Gradient}{5}{0}{2}
+\beamer@subsectionintoc {3}{2}{Basic Algorithms}{6}{0}{2}
+\beamer@subsectionintoc {3}{3}{Adaptive Algorithms}{7}{0}{2}
+\beamer@sectionintoc {4}{Experiment}{8}{0}{3}
+\beamer@subsectionintoc {4}{1}{Experiment Setup}{8}{0}{3}
+\beamer@sectionintoc {5}{Results}{11}{0}{4}
+\beamer@subsectionintoc {5}{1}{Performance Metrics}{11}{0}{4}
+\beamer@subsectionintoc {5}{2}{General Statistics}{16}{0}{4}

@@ -1,0 +1,92 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(readr)
+sgd <- read_csv("/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/sgd.csv")
+adam <- read_csv("/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/adam.csv")
+adgrad <- read_csv("/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/adgrad.csv")
+```
+```{r}
+summary(sgd)
+summary(adam)
+summary(adgrad)
+```
+
+```{r}
+library(ggplot2)
+library(plyr)
+#install.packages('lubridate')
+library(lubridate)
+jpeg('/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/Time.jpg')
+plot(sgd$Time, type="l", col="red", main="Epoch Duration",
+  xlab="Epoch number", ylab="Time in seconds")
+lines(adam$Time, col="green")
+lines(adgrad$Time, col="black")
+legend("topright", inset=.05, title="Algorithm",
+  	c("SGD","ADAM","ADGRAD"),  fill=c("red","green","black"), horiz=FALSE)
+dev.off()
+```
+
+
+```{r}
+jpeg('/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/loss.jpg')
+plot(sgd$loss, type="l", col="red", main="Training loss",
+  xlab="Epoch number", ylab="Loss")
+lines(adam$loss, col="green")
+lines(adgrad$loss, col="black")
+legend("topright", inset=.05, title="Algorithm",
+  	c("SGD","ADAM","ADGRAD"),  fill=c("red","green","black"), horiz=FALSE)
+dev.off()
+```
+
+```{r}
+jpeg('/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/acc.jpg')
+plot(sgd$accuracy, type="l", col="red", main="Training Accuracy",
+  xlab="Epoch number", ylab="Accuracy")
+lines(adam$accuracy, col="green")
+lines(adgrad$accuracy, col="black")
+legend("bottomright", inset=.05, title="Algorithm",
+  	c("SGD","ADAM","ADGRAD"),  fill=c("red","green","black"), horiz=FALSE)
+dev.off()
+```
+
+```{r}
+jpeg('/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/val_loss.jpg')
+plot(sgd$validation_loss, type="l", col="red", main="Validation Loss",
+  xlab="Epoch number", ylab="Loss")
+lines(adam$validation_loss, col="green")
+lines(adgrad$validation_loss, col="black")
+legend("topright", inset=.05, title="Algorithm",
+  	c("SGD","ADAM","ADGRAD"), fill=c("red","green","black"), horiz=FALSE)
+dev.off()
+```
+
+```{r}
+jpeg('/home/alisaleh/Downloads/ias/Summer-Semester-2017/NN Seminar/Code/val_acc.jpg')
+plot(sgd$validation_accuracy, type="l", col="red", main="Validation Accuracy",
+  xlab="Epoch number", ylab="Accuracy")
+lines(adam$validation_accuracy, col="green")
+lines(adgrad$validation_accuracy, col="black")
+legend("bottomright", inset=.05, title="Algorithm",
+  	c("SGD","ADAM","ADGRAD"),  fill=c("red","green","black"), horiz=FALSE)
+dev.off()
+```
+```{r}
+plot(sgd$validation_accuracy, type="l", col="red", main="Validatoin Accuracy",
+  xlab="Epoch number", ylab="Accuracy")
+lines(adam$validation_accuracy, col="green")
+lines(adgrad$validation_accuracy, col="black")
+legend("bottomright", inset=.05, title="Algorithm",
+  	c("SGD","ADAM","ADGRAD"),  fill=c("red","green","black"), horiz=FALSE)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).

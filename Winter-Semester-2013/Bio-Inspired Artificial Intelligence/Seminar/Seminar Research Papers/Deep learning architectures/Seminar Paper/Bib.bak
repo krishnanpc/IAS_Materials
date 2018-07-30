@@ -1,0 +1,17 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@Article{DBLP:journals/pr/FukushimaM82,
+  Title                    = {Neocognitron: A new algorithm for pattern recognition tolerant of deformations and shifts in position},
+  Author                   = {Kunihiko Fukushima and Sei Miyake},
+  Journal                  = {Pattern Recognition},
+  Year                     = {1982},
+  Number                   = {6},
+  Pages                    = {455-469},
+  Volume                   = {15},
+
+  Bibsource                = {DBLP, http://dblp.uni-trier.de},
+  Ee                       = {http://dx.doi.org/10.1016/0031-3203(82)90024-3}
+}
+

@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {2}{Introduction to Predator-prey model}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{General Model}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{Limitations of the Mathematical Models}{5}{0}{1}
+\beamer@sectionintoc {3}{Cellular Automaton Evolution}{6}{0}{2}
+\beamer@subsectionintoc {3}{1}{Cellular Automaton}{6}{0}{2}
+\beamer@subsectionintoc {3}{2}{Simple Predator-Prey CA}{7}{0}{2}
+\beamer@sectionintoc {4}{The Effect of Niches}{10}{0}{3}
+\beamer@subsectionintoc {4}{1}{No-Predator Area}{11}{0}{3}
+\beamer@subsectionintoc {4}{2}{2 Levels Niche}{14}{0}{3}
+\beamer@sectionintoc {5}{Comparison}{17}{0}{4}
+\beamer@subsectionintoc {5}{1}{Average Survival Time}{17}{0}{4}

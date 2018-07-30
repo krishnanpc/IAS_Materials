@@ -1,0 +1,56 @@
+## Listing of directory
+curl -i  http://10.0.0.61:50070/webhdfs/v1?op=LISTSTATUS
+plication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":2,"fileId":16389,"group":"hadoop","length":0,"modificationTime":1481063852597,"owner":"yarn","pathSuffix":"ats","permission":"755","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":1,"fileId":185164,"group":"hdfs","length":0,"modificationTime":1481805383792,"owner":"franzek","pathSuffix":"franzek_rename","permission":"755","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":1,"fileId":16425,"group":"hdfs","length":0,"modificationTime":1481063957204,"owner":"hdfs","pathSuffix":"hdp","permission":"755","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":1,"fileId":36008,"group":"hdfs","length":0,"modificationTime":1481146680543,"owner":"elshinawi","pathSuffix":"hive","permission":"755","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":3,"fileId":38025,"group":"hdfs","length":0,"modificationTime":1481744822396,"owner":"pola","pathSuffix":"home","permission":"755","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":1,"fileId":16421,"group":"hdfs","length":0,"modificationTime":1481063937032,"owner":"mapred","pathSuffix":"mapred","permission":"755","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":2,"fileId":16423,"group":"hadoop","length":0,"modificationTime":1481064011532,"owner":"mapred","pathSuffix":"mr-history","permission":"777","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":1,"fileId":16461,"group":"hadoop","length":0,"modificationTime":1481805563663,"owner":"spark","pathSuffix":"spark-history","permission":"777","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":19,"fileId":16438,"group":"hadoop","length":0,"modificationTime":1481805563672,"owner":"spark","pathSuffix":"spark2-history","permission":"777","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":2,"fileId":16386,"group":"hdfs","length":0,"modificationTime":1481064119235,"owner":"hdfs","pathSuffix":"tmp","permission":"777","replication":0,"storagePolicy":0,"type":"DIRECTORY"},
+{"accessTime":0,"blockSize":0,"childrenNum":19,"fileId":16387,"group":"hdfs","length":0,"modificationTime":1481242110166,"owner":"hdfs","pathSuffix":"user","permission":"777","replication":0,"storagePolicy":0,"type":"DIRECTORY"}
+]}}
+
+## Creation of an file
+curl -i -X PUT http://abu1.cluster:50070/webhdfs/v1/saleh?op=MKDIRS
+curl -i -X PUT http://abu1.cluster:50070/webhdfs/v1/saleh/test.txt?op=CREATE&user.name=saleh&overwrite=true&noredirect=true
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+{"Location":"curl -i -X PUT http://abu1.cluster:50070/webhdfs/v1/saleh/test.txt?op=CREATE"}
+
+## Fetching file content
+curl -i -X PUT http://abu1.cluster:50070/webhdfs/v1/saleh/test.txt?op=OPEN
+
+## Renaming a directory
+
+curl -i -X PUT "http://abu1.cluster:50070/webhdfs/v1/saleh/test.txt?user.name=saleh&op=RENAME&destination="http://abu1.cluster:50070/webhdfs/v1/saleh/test22"   
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{"boolean": true}
+
+## Deletion of a file
+
+curl -i -X DELETE "http://abu1.cluster:50070/webhdfs/v1/foo/test22?op=DELETEE&user.name=saleh"
+
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Transfer-Encoding: chunked
+{"boolean": true}
+
+## Deleting of a directory
+
+curl -i -X DELETE "http://abu1.cluster:50070/webhdfs/v1/saleh/?op=DELETEE&user.name=saleh&recursive=true"
+
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Transfer-Encoding: chunked
+{"boolean": true}

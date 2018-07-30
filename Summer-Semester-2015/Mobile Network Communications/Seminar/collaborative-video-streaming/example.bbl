@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{ColStream}
+M.~Zhong, P.~Hu, J.~Indulska, and M.~Kumar,
+\newblock Colstream: Collaborative streaming of on-demand videos for mobile
+  devices,
+\newblock in {\em World of Wireless, Mobile and Multimedia Networks (WoWMoM),
+  2014 IEEE 15th International Symposium on a}, pp. 1--7, 2014.
+
+\bibitem{P2P}
+D.~Qiu and R.~Srikant,
+\newblock Modeling and performance analysis of bittorrent-like peer-to-peer
+  networks,
+\newblock in {\em Proceedings of the 2004 Conference on Applications,
+  Technologies, Architectures, and Protocols for Computer Communications},
+  SIGCOMM '04, pp. 367--378, New York, NY, USA, 2004, ACM.
+
+\bibitem{CStream}
+T.~Seenivasan and M.~Claypool,
+\newblock Multimedia Tools and Applications {\bf 70}, 379 (2014).
+
+\bibitem{COMBINE}
+G.~Ananthanarayanan, V.~N. Padmanabhan, L.~Ravindranath, and C.~A. Thekkath,
+\newblock Combine: Leveraging the power of wireless peers through collaborative
+  downloading,
+\newblock in {\em Proceedings of the 5th International Conference on Mobile
+  Systems, Applications and Services}, MobiSys '07, pp. 286--298, New York, NY,
+  USA, 2007, ACM.
+
+\bibitem{cohen2003incentives}
+B.~Cohen,
+\newblock Incentives build robustness in bittorrent,
+\newblock in {\em Workshop on Economics of Peer-to-Peer systems} Vol.~6, pp.
+  68--72, 2003.
+
+\end{thebibliography}

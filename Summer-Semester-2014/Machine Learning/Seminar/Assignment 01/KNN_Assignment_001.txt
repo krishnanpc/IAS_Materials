@@ -1,0 +1,4 @@
+Assignment 1
+a) Prepare the dataset and the classifier:
+	the datasets two datasets are from uniform distribution with class A on the interval [0,1] and the class B from the interval [1,2]
+	

@@ -1,0 +1,199 @@
+\documentclass[12pt,twoside]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Meta informations:
+\newcommand{\trauthor}{Ali Saleh}
+\newcommand{\trtype}{Seminar Paper} %{Seminararbeit} %{Proseminararbeit}
+\newcommand{\trcourse}{Neural Networks}
+\newcommand{\trtitle}{Using Neural Network for Improving parsing }
+\newcommand{\trmatrikelnummer}{6517831}
+\newcommand{\tremail}{3saleh@informatik.uni-hamburg.de}
+\newcommand{\trdate}{14.052.2013}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Languages:
+
+% Falls die Ausarbeitung in Deutsch erfolgt:
+% \usepackage[german]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+% \usepackage[latin9]{inputenc}	 				
+% \selectlanguage{german}
+
+% If the thesis is written in English:
+\usepackage[english]{babel} 						
+\selectlanguage{english}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bind packages:
+\usepackage{acronym}                    % Acronyms
+\usepackage{algorithmic}								% Algorithms and Pseudocode
+\usepackage{algorithm}									% Algorithms and Pseudocode
+\usepackage{amsfonts}                   % AMS Math Packet (Fonts)
+\usepackage{amsmath}                    % AMS Math Packet
+\usepackage{amssymb}                    % Additional mathematical symbols
+\usepackage{amsthm}
+\usepackage{booktabs}                   % Nicer tables
+%\usepackage[font=small,labelfont=bf]{caption} % Numbered captions for figures
+\usepackage{color}                      % Enables defining of colors via \definecolor
+\definecolor{uhhRed}{RGB}{254,0,0}		  % Official Uni Hamburg Red
+\definecolor{uhhGrey}{RGB}{122,122,120} % Official Uni Hamburg Grey
+\usepackage{fancybox}                   % Gleichungen einrahmen
+\usepackage{fancyhdr}										% Packet for nicer headers
+%\usepackage{fancyheadings}             % Nicer numbering of headlines
+
+%\usepackage[outer=3.35cm]{geometry} 	  % Type area (size, margins...) !!!Release version
+%\usepackage[outer=2.5cm]{geometry} 		% Type area (size, margins...) !!!Print version
+%\usepackage{geometry} 									% Type area (size, margins...) !!!Proofread version
+\usepackage[outer=3.15cm]{geometry} 	  % Type area (size, margins...) !!!Draft version
+\geometry{a4paper,body={5.8in,9in}}
+
+\usepackage{graphicx}                   % Inclusion of graphics
+%\usepackage{latexsym}                  % Special symbols
+\usepackage{longtable}									% Allow tables over several parges
+\usepackage{listings}                   % Nicer source code listings
+\usepackage{caption}
+\usepackage{multicol}										% Content of a table over several columns
+\usepackage{multirow}										% Content of a table over several rows
+\usepackage{rotating}										% Alows to rotate text and objects
+\usepackage[hang]{subfigure}            % Allows to use multiple (partial) figures in a fig
+%\usepackage[font=footnotesize,labelfont=rm]{subfig}	% Pictures in a floating environment
+\usepackage{tabularx}										% Tables with fixed width but variable rows
+\usepackage{url,xspace,boxedminipage}   % Accurate display of URLs
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configurationen:
+
+\hyphenation{whe-ther} 									% Manually use: "\-" in a word: Staats\-ver\-trag
+
+%\lstloadlanguages{C}                   % Set the default language for listings
+\DeclareGraphicsExtensions{.pdf,.svg,.jpg,.png,.eps} % first try pdf, then eps, png and jpg
+\graphicspath{{./src/}} 								% Path to a folder where all pictures are located
+\pagestyle{fancy} 											% Use nicer header and footer
+
+% Redefine the environments for floating objects:
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.9} 			  %Standard: 0.7
+\renewcommand{\bottomfraction}{0.5}		  %Standard: 0.3
+\renewcommand{\textfraction}{0.1}		  	%Standard: 0.2
+\renewcommand{\floatpagefraction}{0.8} 	%Standard: 0.5
+
+% Tables with a nicer padding:
+\renewcommand{\arraystretch}{1.2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Additional 'theorem' and 'definition' blocks:
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{theorem}{Satz}[section]		% Wenn in Deutsch geschrieben wird.
+\newtheorem{axiom}{Axiom}[section] 	
+%\newtheorem{axiom}{Fakt}[chapter]			% Wenn in Deutsch geschrieben wird.
+%Usage:%\begin{axiom}[optional description]%Main part%\end{fakt}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%Additional types of axioms:
+\newtheorem{lemma}[axiom]{Lemma}
+\newtheorem{observation}[axiom]{Observation}
+
+%Additional types of definitions:
+\theoremstyle{remark}
+%\newtheorem{remark}[definition]{Bemerkung} % Wenn in Deutsch geschrieben wird.
+\newtheorem{remark}[definition]{Remark} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Provides TODOs within the margin:
+\newcommand{\TODO}[1]{\marginpar{\emph{\small{{\bf TODO: } #1}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations and mathematical symbols
+\newcommand{\modd}{\text{ mod }}
+\newcommand{\RS}{\mathbb{R}}
+\newcommand{\NS}{\mathbb{N}}
+\newcommand{\ZS}{\mathbb{Z}}
+\newcommand{\dnormal}{\mathit{N}}
+\newcommand{\duniform}{\mathit{U}}
+
+\newcommand{\erdos}{Erd\H{o}s}
+\newcommand{\renyi}{-R\'{e}nyi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document:
+\begin{document}
+\renewcommand{\headheight}{14.5pt}
+
+\fancyhead{}
+\fancyhead[LE]{ \slshape \trauthor}
+\fancyhead[LO]{}
+\fancyhead[RE]{}
+\fancyhead[RO]{ \slshape \trtitle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cover Header:
+\begin{titlepage}
+	\begin{flushleft}
+		Universit\"at Hamburg\\
+		Department Informatik\\
+	\end{flushleft}
+	\vspace{3.5cm}
+	\begin{center}
+		\huge \trtitle\\
+	\end{center}
+	\vspace{3.5cm}
+	\begin{center}
+		\normalsize\trtype\\
+		[0.2cm]
+		\Large\trcourse\\
+		[1.5cm]
+		\Large \trauthor\\
+		[0.2cm]
+		\normalsize Matr.Nr. \trmatrikelnummer\\
+		[0.2cm]
+		\normalsize\tremail\\
+		[1.5cm]
+		\Large \trdate
+	\end{center}
+	\vfill
+\end{titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract:
+
+% Abstract gives a brief summary of the main points of a paper:
+\section*{Abstract}
+Natural language parsing is the analysis of text to produce the structure of sentences, and dividing it to different parts of speech usually in the form of a parsing tree. This paper aims to give a brief overview of the different parsing technique found in literature, discuss in depth a new parsing technique that benefits from the syntactic and semantic of sentences to improve performance, show experimental results against state of art parsing techniques, and offer a discussion of the results and the performance of the technique and showing other applications of this technique applied in more advanced language processing areas of research.
+% Lists:
+\setcounter{tocdepth}{2} 					% depth of the table of contents (for Seminars 2 is recommented)
+\tableofcontents
+\pagenumbering{arabic}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Content:
+
+% the actual content, usually separated over a number of sections
+% each section is assigned a label, in order to be able to put a
+% crossreference to it
+\section{Introduction}
+Parsing is the grammatical analysis of text in order to divide it's symbol into grammatical parts \ref{Chapman1987}. Parsing is one of the most fundamental tasks in computer science. It is a preliminary task to other more sophisticated tasks, for example compilers usually begins by parsing the source code to symbols tables before it begin to generate machine code. Several techniques have been developed to optimize the performance and improve the output of a parser.
+
+In Natural language processing parsing aims to analyze a text input and assign each word in it to it's part of speech (noun phrase, verb phrase, etc\ldots). One main problem that arise while parsing text is resolving ambiguity in deciding which part of speech does a word belongs to (for example Tony ate chicken with fork and Tony are chicken with fries) . This ambiguity in the structure of the sentences can only be resolved by taking into consideration the semantic contextual and semantic information in text. To improve the performance of a parser at all and improve ambiguity resolving  Probabilistic parsers. In this paper we are going to asses the improvements a that can be introduced to a Probabilistic parser by using a variant of neural network that learns the semantic information in text. 
+
+This paper will be organized as following, in Section two will be an overview of Natural Language Parsing and will give a quick overview on the fundamental algorithms for parsing. Section three will introduce the Compositional Vector Grammars and how it works. Section Four shows the experimental results for this algorithm and how does it perform compared to other parsing algorithms. Finally a discussion will be done in section five trying to explain why does this algorithm five better results and why does other algorithms still outperform it.
+\section{Overview of Natural Language Parsing}
+\subsection{Top-down parsers}
+\subsection{Bottom-down parsers}
+\subsection{Probabilistic parsing}
+\section{Parsing with Compositional Vector Grammars}
+\section{Experimental results for Classification and recognition}
+\section{Criticism \& Discussion}
+\section{Conclusion}
+
+%\bibliography{bib}
+%\bibliographystyle{plain}
+%\addcontentsline{toc}{section}{Bibliography}% Add to the TOC
+
+\end{document}
+
+

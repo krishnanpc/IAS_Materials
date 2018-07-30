@@ -1,0 +1,15 @@
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 1.1}{\ignorespaces Overview of the idea of ColStream\relax }}{4}{figure.caption.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Group formation\relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Collaborative Download\relax }}{10}{figure.caption.8}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Performance over number of collaborators \unhbox \voidb@x \hbox {\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\cite {ColStream}}\relax }}{13}{figure.caption.9}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Download ammunt over time by collaborator with user joining \unhbox \voidb@x \hbox {\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\cite {ColStream}}\relax }}{15}{figure.caption.10}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Download amount over time by collaborator with user leaving \unhbox \voidb@x \hbox {\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\cite {ColStream}}\relax }}{15}{figure.caption.11}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Download amount over time by collaborator with connection loss to user \unhbox \voidb@x \hbox {\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\cite {ColStream}}\relax }}{16}{figure.caption.12}
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Redownload handling by ColStream and COMBINE \unhbox \voidb@x \hbox {\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\cite {ColStream}}\relax }}{17}{figure.caption.13}
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Group optimisation over group size \unhbox \voidb@x \hbox {\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\tmspace -\thinmuskip {.1667em}\cite {ColStream}}\relax }}{18}{figure.caption.14}
+\addvspace {10\p@ }

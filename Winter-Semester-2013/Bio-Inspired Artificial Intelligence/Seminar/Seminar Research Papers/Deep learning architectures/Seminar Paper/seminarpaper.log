@@ -1,0 +1,643 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.24)  16 MAR 2015 03:35
+entering extended mode
+**seminarpaper.tex
+
+("D:\Study\IAS\Winter Semester 2013\Bio-Inspired Artificial Intelligence\Semina
+r\Seminar Research Papers\Deep learning architectures\Seminar Paper\seminarpape
+r.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\acronym\acronym.sty"
+Package: acronym 2012/10/29 v1.38 Support for acronyms (Tobias Oetiker)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\bigfoot\suffix.sty"
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
+\@xs@message=\write3
+\integerpart=\count87
+\decimalpart=\count88
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\AC@clearlist=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+\c@ALC@unique=\count89
+\c@ALC@line=\count90
+\c@ALC@rem=\count91
+\c@ALC@depth=\count92
+\ALC@tlm=\skip43
+\algorithmicindent=\skip44
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count93
+\float@exts=\toks16
+\float@box=\box26
+\@float@everytoks=\toks17
+\@floatcapt=\box27
+)
+\@float@every@algorithm=\toks18
+\c@algorithm=\count94
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks19
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks20
+\ex@=\dimen103
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks21
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks22
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks23
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks30
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen112
+\lightrulewidth=\dimen113
+\cmidrulewidth=\dimen114
+\belowrulesep=\dimen115
+\belowbottomsep=\dimen116
+\aboverulesep=\dimen117
+\abovetopsep=\dimen118
+\cmidrulesep=\dimen119
+\cmidrulekern=\dimen120
+\defaultaddspace=\dimen121
+\@cmidla=\count107
+\@cmidlb=\count108
+\@aboverulesep=\dimen122
+\@belowrulesep=\dimen123
+\@thisruleclass=\count109
+\@lastruleclass=\count110
+\@thisrulewidth=\dimen124
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count111
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancybox\fancybox.sty"
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box30
+\shadowsize=\dimen125
+\@Sbox=\box31
+\do@VerbBox=\toks31
+\the@fancyput=\toks32
+\this@fancyput=\toks33
+\EndVerbatimTokens=\toks34
+\Verbatim@Outfile=\write4
+\Verbatim@Infile=\read1
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip51
+\f@ncyO@elh=\skip52
+\f@ncyO@erh=\skip53
+\f@ncyO@olh=\skip54
+\f@ncyO@orh=\skip55
+\f@ncyO@elf=\skip56
+\f@ncyO@erf=\skip57
+\f@ncyO@olf=\skip58
+\f@ncyO@orf=\skip59
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count112
+\Gm@cntv=\count113
+\c@Gm@tempcnt=\count114
+\Gm@bindingoffset=\dimen126
+\Gm@wd@mp=\dimen127
+\Gm@odd@mp=\dimen128
+\Gm@even@mp=\dimen129
+\Gm@layoutwidth=\dimen130
+\Gm@layoutheight=\dimen131
+\Gm@layouthoffset=\dimen132
+\Gm@layoutvoffset=\dimen133
+\Gm@dimlist=\toks35
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen134
+\Gin@req@width=\dimen135
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip60
+\LTright=\skip61
+\LTpre=\skip62
+\LTpost=\skip63
+\LTchunksize=\count115
+\LTcapwidth=\dimen136
+\LT@head=\box32
+\LT@firsthead=\box33
+\LT@foot=\box34
+\LT@lastfoot=\box35
+\LT@cols=\count116
+\LT@rows=\count117
+\c@LT@tables=\count118
+\c@LT@chunks=\count119
+\LT@p@ftn=\toks36
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count120
+\lst@gtempboxa=\box36
+\lst@token=\toks37
+\lst@length=\count121
+\lst@currlwidth=\dimen137
+\lst@column=\count122
+\lst@pos=\count123
+\lst@lostspace=\dimen138
+\lst@width=\dimen139
+\lst@newlines=\count124
+\lst@lineno=\count125
+\lst@maxwidth=\dimen140
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count126
+\lst@skipnumbers=\count127
+\lst@framebox=\box37
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen141
+\captionmargin@=\dimen142
+\captionwidth=\dimen143
+\caption@tempdima=\dimen144
+\caption@indent=\dimen145
+\caption@parindent=\dimen146
+\caption@hangindent=\dimen147
+)
+\c@ContinuedFloat=\count128
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
+Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count129
+\mult@box=\box38
+\multicol@leftmargin=\dimen148
+\c@unbalance=\count130
+\c@collectmore=\count131
+\doublecol@number=\count132
+\multicoltolerance=\count133
+\multicolpretolerance=\count134
+\full@width=\dimen149
+\page@free=\dimen150
+\premulticols=\dimen151
+\postmulticols=\dimen152
+\multicolsep=\skip64
+\multicolbaselineskip=\skip65
+\partial@page=\box39
+\last@line=\box40
+\mult@rightbox=\box41
+\mult@grightbox=\box42
+\mult@gfirstbox=\box43
+\mult@firstbox=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\c@columnbadness=\count135
+\c@finalcolumnbadness=\count136
+\last@try=\dimen153
+\multicolovershoot=\dimen154
+\multicolundershoot=\dimen155
+\mult@nat@firstbox=\box62
+\colbreak@box=\box63
+\multicol@sort@counter=\count137
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen156
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count138
+\rotFPtop=\skip66
+\rotFPbot=\skip67
+\rot@float@box=\box64
+\rot@mess@toks=\toks38
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip68
+\subfigcapskip=\skip69
+\subfigcaptopadj=\dimen157
+\subfigbottomskip=\skip70
+\subfigcapmargin=\dimen158
+\subfiglabelskip=\skip71
+\c@subfigure=\count139
+\c@lofdepth=\count140
+\c@subtable=\count141
+\c@lotdepth=\count142
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip72
+\subfig@bottom=\skip73
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen159
+\extrarowheight=\dimen160
+\NC@list=\toks39
+\extratabsurround=\skip74
+\backup@length=\skip75
+)
+\TX@col@width=\dimen161
+\TX@old@table=\dimen162
+\TX@old@col=\dimen163
+\TX@target=\dimen164
+\TX@delta=\dimen165
+\TX@cols=\count143
+\TX@ftn=\toks40
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\boxedminipage\boxedminipage.sty")
+\c@theorem=\count144
+\c@axiom=\count145
+\c@definition=\count146
+
+("D:\Study\IAS\Winter Semester 2013\Bio-Inspired Artificial Intelligence\Semina
+r\Seminar Research Papers\Deep learning architectures\Seminar Paper\seminarpape
+r.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count147
+\scratchdimen=\dimen166
+\scratchbox=\box65
+\nofMPsegments=\count148
+\nofMParguments=\count149
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count150
+\MPscratchDim=\dimen167
+\MPnumerator=\count151
+\makeMPintoPDFobject=\count152
+\everyMPtoPDFconversion=\toks42
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(88.71565pt, 419.16621pt, 89.626pt)
+* v-part:(T,H,B)=(77.84674pt, 650.43pt, 116.77011pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=419.16621pt
+* \textheight=650.43pt
+* \oddsidemargin=16.44566pt
+* \evensidemargin=17.35602pt
+* \topmargin=-31.42325pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=95.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@lstlisting=\count153
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: rotating package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+("D:\Study\IAS\Winter Semester 2013\Bio-Inspired Artificial Intelligence\Semina
+r\Seminar Research Papers\Deep learning architectures\Seminar Paper\seminarpape
+r.toc"
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write5
+ [1]
+
+LaTeX Warning: Citation `Lee2009' on page 2 undefined on input line 183.
+
+<Images/Original_pande2.jpg, id=12, 611.28375pt x 601.24625pt>
+File: Images/Original_pande2.jpg Graphic file (type jpg)
+
+<use Images/Original_pande2.jpg>
+Package pdftex.def Info: Images/Original_pande2.jpg used on input line 194.
+(pdftex.def)             Requested size: 397.32973pt x 390.80542pt.
+ [2
+
+]
+<Images/ScholarFig1.jpg, id=16, 301.125pt x 210.03468pt>
+File: Images/ScholarFig1.jpg Graphic file (type jpg)
+
+<use Images/ScholarFig1.jpg>
+Package pdftex.def Info: Images/ScholarFig1.jpg used on input line 204.
+(pdftex.def)             Requested size: 301.12425pt x 210.03416pt.
+ [3 <D:/Study/IAS/Winter Semester 2013/Bio-Inspired Artificial Intelligence/Sem
+inar/Seminar Research Papers/Deep learning architectures/Seminar Paper/Images/O
+riginal_pande2.jpg>]
+
+LaTeX Warning: Citation `Hinton1986' on page 4 undefined on input line 211.
+
+[4 <D:/Study/IAS/Winter Semester 2013/Bio-Inspired Artificial Intelligence/Semi
+nar/Seminar Research Papers/Deep learning architectures/Seminar Paper/Images/Sc
+holarFig1.jpg>]
+
+LaTeX Warning: Citation `Lee2009' on page 5 undefined on input line 216.
+
+
+LaTeX Warning: Reference `Hinton2006D' on page 5 undefined on input line 219.
+
+<Images/autoencoders.jpg, id=23, 1284.8pt x 1054.94125pt>
+File: Images/autoencoders.jpg Graphic file (type jpg)
+
+<use Images/autoencoders.jpg>
+Package pdftex.def Info: Images/autoencoders.jpg used on input line 223.
+(pdftex.def)             Requested size: 385.44298pt x 316.48482pt.
+ [5]
+
+LaTeX Warning: Citation `Lee2009' on page 6 undefined on input line 231.
+
+[6 <D:/Study/IAS/Winter Semester 2013/Bio-Inspired Artificial Intelligence/Semi
+nar/Seminar Research Papers/Deep learning architectures/Seminar Paper/Images/au
+toencoders.jpg>] <Images/images.jpg, id=31, 288.07625pt x 176.66pt>
+File: Images/images.jpg Graphic file (type jpg)
+
+<use Images/images.jpg>
+Package pdftex.def Info: Images/images.jpg used on input line 238.
+(pdftex.def)             Requested size: 288.07553pt x 176.65956pt.
+
+
+LaTeX Warning: Citation `Lee2009' on page 7 undefined on input line 242.
+
+[7 <D:/Study/IAS/Winter Semester 2013/Bio-Inspired Artificial Intelligence/Semi
+nar/Seminar Research Papers/Deep learning architectures/Seminar Paper/Images/im
+ages.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+Package caption Warning: \captionsetup{type*=...} or \captionof
+(caption)                outside box or environment on input line 268.
+See the caption package documentation for explanation.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+("D:\Study\IAS\Winter Semester 2013\Bio-Inspired Artificial Intelligence\Semina
+r\Seminar Research Papers\Deep learning architectures\Seminar Paper\seminarpape
+r.bbl"
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no © in font cmr12!
+ [9]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+) [10]
+("D:\Study\IAS\Winter Semester 2013\Bio-Inspired Artificial Intelligence\Semina
+r\Seminar Research Papers\Deep learning architectures\Seminar Paper\seminarpape
+r.aux")
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6619 strings out of 493921
+ 95956 string characters out of 3144882
+ 168933 words of memory out of 3000000
+ 9785 multiletter control sequences out of 15000+200000
+ 10801 words of font info for 40 fonts, out of 3000000 for 9000
+ 842 hyphenation exceptions out of 8191
+ 36i,11n,43p,1506b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on seminarpaper.pdf (11 pages, 385594 bytes).
+PDF statistics:
+ 78 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+

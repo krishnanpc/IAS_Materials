@@ -1,0 +1,70 @@
+\begin{thebibliography}{}
+
+\bibitem[Arel et~al., 2010]{Arel2010}
+Arel, I., Rose, D.~C., and Karnowski, T.~P. (2010).
+\newblock Deep machine learning - a new frontier in artificial intelligence
+  research [research frontier].
+\newblock {\em IEEE Computational Intelligence Magazine}, 5(4):13--18.
+
+\bibitem[{de Boer} et~al., 2005]{Boer2007}
+{de Boer}, P.-T., Kroese, D., Mannor, S., and Rubinstein, R. (2005).
+\newblock A tutorial on the cross-entropy method.
+\newblock 134(1):19--67.
+\newblock Imported from research group DACS (ID number 277).
+
+\bibitem[Diederik P.~Kingma, 2015]{Kingma2015}
+Diederik P.~Kingma, J. L.~B. (2015).
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em ICLR}.
+
+\bibitem[Graham, 2014a]{Graham14a}
+Graham, B. (2014a).
+\newblock Fractional max-pooling.
+\newblock {\em CoRR}, abs/1412.6071.
+
+\bibitem[Graham, 2014b]{Graham14}
+Graham, B. (2014b).
+\newblock Spatially-sparse convolutional neural networks.
+\newblock {\em CoRR}, abs/1409.6070.
+
+\bibitem[John~Duchi, 2011]{Duchi2011}
+John~Duchi, Elad~Hazan, Y.~S. (2011).
+\newblock Adaptive subgradient methods for online learning and stochastic
+  optimization.
+\newblock {\em JMLR}.
+
+\bibitem[Krizhevsky, 2009]{Krizhevsky2009}
+Krizhevsky, A. (2009).
+\newblock Learning multiple layers of features from tiny images.
+
+\bibitem[Mishkin and Matas, 2015]{MishkinM15}
+Mishkin, D. and Matas, J. (2015).
+\newblock All you need is a good init.
+\newblock {\em CoRR}, abs/1511.06422.
+
+\bibitem[Qian, 1999]{Qian99onthe}
+Qian, N. (1999).
+\newblock On the momentum term in gradient descent learning algorithms.
+
+\bibitem[Ruder, 2016]{Ruder16}
+Ruder, S. (2016).
+\newblock An overview of gradient descent optimization algorithms.
+\newblock {\em CoRR}, abs/1609.04747.
+
+\bibitem[Schmidhuber, 2015]{Schmidhuber201585}
+Schmidhuber, J. (2015).
+\newblock Deep learning in neural networks: An overview.
+\newblock {\em Neural Networks}, 61:85 -- 117.
+
+\bibitem[Springenberg et~al., 2014]{SpringenbergDBR14}
+Springenberg, J.~T., Dosovitskiy, A., Brox, T., and Riedmiller, M.~A. (2014).
+\newblock Striving for simplicity: The all convolutional net.
+\newblock {\em CoRR}, abs/1412.6806.
+
+\bibitem[Srivastava et~al., 2014]{srivastava14a}
+Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov,
+  R. (2014).
+\newblock Dropout: A simple way to prevent neural networks from overfitting.
+\newblock {\em Journal of Machine Learning Research}, 15:1929--1958.
+
+\end{thebibliography}

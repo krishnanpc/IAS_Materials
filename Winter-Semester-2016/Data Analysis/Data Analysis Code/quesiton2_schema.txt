@@ -1,0 +1,23 @@
+CREATE TABLE Article (
+	articleId NUMERIC PRIMARY KEY,
+	title varchar(100),
+	text varchar(max)
+)
+
+
+CREATE TABLE Links (
+	article NUMERIC PRIMARY KEY,
+	linkedArticle NUMERIC PRIMARY KEY
+)
+
+
+CREATE TABLE Category(
+	categoryId NUMERIC PRIMARY KEY,
+	categoryName varchar(100),
+	mainArticle NUMERIC
+)
+
+CREATE TABLE ArticleCategory(
+	article NUMERIC PRIMARY KEY,
+	category NUMERIC PRIMARY KEY
+)

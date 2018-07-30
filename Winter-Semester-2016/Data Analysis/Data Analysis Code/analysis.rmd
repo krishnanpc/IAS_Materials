@@ -1,0 +1,198 @@
+---
+title: "Netcdf data analysis"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document: default
+---
+<br>
+Guiding questions <br>
+How does the mean temperature (for each year) in ◦C for Hamburg behave? <br />
+Is there a difference to Tokio? <br />
+Is there a correlation between temperature, precipitation and sun duration? <br />
+How much difference is between regional values (pick any of the variables)? Why could the value
+be higher in some cases than in others?
+
+<br/>
+```{r, include=FALSE}
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE) 
+# install.packages('ncdf4')
+library(ncdf4)
+```
+
+Dumb Descibrtion of Data
+```{r}
+ncname <- "weather-full"  
+ncfname <- paste(ncname,".nc", sep="")
+
+# open a netCDF file
+ncin <- nc_open(ncfname)
+temp <- ncvar_get(ncin,"t2m")
+print(ncin)
+```
+Question 1: How does the mean temperature (for each year) in ◦C for Hamburg (53.5511° N, 9.9937° E) behave? 
+For this question we extracted the data for all the 3 years over Hamburg and plotted the mean tempreature of per month. The year 2016 (the years indexing is just for labeling but it doesn't reflect the actuall dates of the data measuring) seems to be the warmest year , while 2014 looks like the coldest      
+
+for easier calculations the months were all assumed to be 30 days this leads to 5 days shift for the 2nd and 3rd year, we did a test in the next figure to show the statistical difference over the mean for having those 5 days shift
+```{r}
+library(ggplot2)
+library(plyr)
+library(lubridate)
+
+# this is used as R will sort the MonthOfYear alphabitically if month names are used
+All_Months <- c("Jan","Feb","Mar",
+              "Apr","May","Jun",
+              "Jul","Aug","Sep",
+              "Oct","Nov","Dec")
+
+monthly <- matrix(c(temp[14,50,]),nrow = 30,ncol = 36)
+mean_monthly <- colMeans(monthly, na.rm = TRUE)
+mean_monthly <- (mean_monthly-32) * 0.5556
+
+dts <- seq(as.Date("2014/1/1"), by = "month", length.out = 36)
+temp_hamburg <- data.frame(Temprature = c(mean_monthly), Dates = dts)
+Temps_per_day <- transform(temp_hamburg, 
+                           Year = format(Dates, '%Y'),
+                           MonthOfYear = as.numeric(format(Dates, '%m')),
+                           Temprature = Temprature)
+# hist(temp_hamburg)
+ggplot(Temps_per_day, aes(MonthOfYear, Temprature)) +
+  geom_line( aes(colour = Year)) + geom_point( aes(shape = Year)) +
+  scale_x_discrete(limits = All_Months) +
+  labs(title = "Mean Monthly Temperature Over Hamburg") +
+  labs(x = "Month") +
+  labs(y = "Temperature")
+```
+The effect of having 5 days shift in the second year. Omitting last 5 days of the actual year for simplicity. In the figures below there is actually a difference between the months specially Jan and Feb, but those differences are in the range of -0.5 to +0.5 and cannot be attributed to the differences shown in the previous figure. Thus the shifted days can be assumed to be statistically in-significant (this statement is not scientifically accurate but It's the best description available)
+```{r}
+shifte_second_year <- mean_monthly[13:24]
+Actuall_second_year <- matrix(c(temp[14,50,365:730]),nrow = 30,ncol = 12)
+mean_monthly_second <- colMeans(Actuall_second_year, na.rm = TRUE)
+mean_monthly_second <- (mean_monthly_second-32) * 0.5556
+mean_monthly_Total <- c (shifte_second_year, mean_monthly_second)
+
+dts_shifted <- seq(as.Date("2014/1/1"), by = "month", length.out = 24)
+temp_compare <- data.frame(Temprature = c(mean_monthly_Total), Dates = dts_shifted)
+Temps_per_day <- transform(temp_compare, 
+                           Year = format(Dates, '%Y'),
+                           MonthOfYear = as.numeric(format(Dates, '%m')),
+                           Temprature = Temprature)
+
+ggplot(Temps_per_day, aes(MonthOfYear, Temprature)) +
+  geom_line( aes(colour = Year)) + geom_point( aes(shape = Year)) +
+  scale_x_discrete(limits = All_Months) +
+  labs(title = "Relative difference between Actuall and shifted years") +
+  labs(x = "Month") +
+  labs(y = "Temperature")
+
+dts_shifted <- seq(as.Date("2014/1/1"), by = "month", length.out = 12)
+mean_monthly_Total <- c (shifte_second_year - mean_monthly_second)
+temp_compare <- data.frame(Temprature = c(mean_monthly_Total), Dates = dts_shifted)
+Temps_per_day <- transform(temp_compare, 
+                           Year = format(Dates, '%Y'),
+                           MonthOfYear = as.numeric(format(Dates, '%m')),
+                           Temprature = Temprature)
+
+ggplot(Temps_per_day, aes(MonthOfYear, Temprature)) +
+  geom_line( aes(colour = Year)) + geom_point( aes(shape = Year)) +
+  scale_x_discrete(limits = All_Months) +
+  labs(title = "Asolute Difference between Actuall and shifted years") +
+  labs(x = "Month") +
+  labs(y = "Temperature")
+
+```
+
+Is there a difference to Tokio (35.6895° N, 139.6917° E)?
+Unlike Hamburg, Tokyo seems to have a mixed weather over the years. No year is the coldest or the warmest. 
+```{r}
+monthly <- matrix(c(temp[187,74,]),nrow = 30,ncol = 36)
+mean_monthly <- colMeans(monthly, na.rm = TRUE)
+mean_monthly <- (mean_monthly-32) * 0.5556
+temp_hamburg <- data.frame(Temprature = c(mean_monthly), Dates = dts)
+Temps_per_day <- transform(temp_hamburg, 
+                           Year = format(Dates, '%Y'),
+                           MonthOfYear = as.numeric(format(Dates, '%m')),
+                           Temprature = Temprature)
+# hist(temp_hamburg)
+ggplot(Temps_per_day, aes(MonthOfYear, Temprature)) +
+  geom_line( aes(colour = Year)) + geom_point( aes(shape = Year)) +
+  scale_x_discrete(limits = All_Months) +
+  labs(title = "Mean Monthly Temperature Over Tokyo") +
+  labs(x = "Month") +
+  labs(y = "Temperature")
+```
+Is there a correlation between temperature, precipitation and sun duration? For this question all the data for the 3 metrics have been loaded into vector, and the correlations were calculated for them. No apparent linear correlation have been detected which seems counter intuitive. For plots partial set of the actual data have been used to avoid long time in rendering.
+```{r}
+vector_of_temperature <- c(temp[1:10,1:10,])
+vector_of_precipitation <- c( ncvar_get(ncin,"tp")[1:10,1:10,])
+vector_of_sun_duration <- c( ncvar_get(ncin,"sund")[1:10,1:10,])
+
+
+temperature <- c(temp[,,])
+precipitation <- c( ncvar_get(ncin,"tp")[,,])
+sun_duration <- c( ncvar_get(ncin,"sund")[,,])
+
+plot(vector_of_precipitation, vector_of_temperature, pch = 1, xlab = "Precipitation", 
+     ylab = "temperature", col = 14)
+
+cor(precipitation,temperature, method = "pearson") 
+
+
+plot(vector_of_sun_duration, vector_of_temperature, pch = 1, xlab = "Sun Dudatrion", 
+     ylab = "temperature", col = 14)
+
+cor(sun_duration,temperature, method = "pearson")
+
+
+plot(vector_of_sun_duration, vector_of_precipitation, pch = 1, xlab = "Sun Dudatrion", 
+     ylab = "Precipitation", col = 14)
+
+cor(sun_duration,precipitation, method = "pearson")
+```
+Is there a correlation between temperature, precipitation and sun duration? This time only testing for Hamburg and Tokyo.
+While unexpected but it seems that there is a positive correlation between sun duration and percipitaion in Hamburg but not in Tokyo.
+```{r}
+vector_of_temperature <- c(temp[15,50,])
+vector_of_precipitation <- c( ncvar_get(ncin,"tp")[15,50,])
+vector_of_sun_duration <- c( ncvar_get(ncin,"sund")[15,50,])
+
+plot(vector_of_precipitation, vector_of_temperature, pch = 1, xlab = "Precipitation", 
+     ylab = "temperature", col = 14)
+
+cor(vector_of_precipitation,vector_of_temperature, method = "pearson") 
+
+
+plot(vector_of_sun_duration, vector_of_temperature, pch = 1, xlab = "Sun Dudatrion", 
+     ylab = "temperature", col = 14)
+
+cor(vector_of_sun_duration,vector_of_temperature, method = "pearson") 
+
+
+plot(vector_of_sun_duration, vector_of_precipitation, pch = 1, xlab = "Sun Dudatrion", 
+     ylab = "Precipitation", col = 14)
+
+cor(vector_of_sun_duration,vector_of_precipitation, method = "pearson") 
+
+vector_of_temperature <- c(temp[187,74,])
+vector_of_precipitation <- c( ncvar_get(ncin,"tp")[187,74,])
+vector_of_sun_duration <- c( ncvar_get(ncin,"sund")[187,74,])
+
+plot(vector_of_precipitation, vector_of_temperature, pch = 1, xlab = "Precipitation", 
+     ylab = "temperature", col = 14)
+
+cor(vector_of_precipitation,vector_of_temperature, method = "pearson")
+
+
+plot(vector_of_sun_duration, vector_of_temperature, pch = 1, xlab = "Sun Dudatrion", 
+     ylab = "temperature", col = 14)
+
+cor(vector_of_sun_duration,vector_of_temperature, method = "pearson") 
+
+
+plot(vector_of_sun_duration, vector_of_precipitation, pch = 1, xlab = "Sun Dudatrion", 
+     ylab = "Precipitation", col = 14)
+
+cor(vector_of_sun_duration,vector_of_precipitation, method = "pearson") 
+
+```

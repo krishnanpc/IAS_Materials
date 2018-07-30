@@ -1,0 +1,11 @@
+clear;clc;
+load('dataRidge.mat');
+plot(x_train,'r*');
+x_train=[x_train ones(length(x_train),1)];
+W=LLS(x_train,y_train);
+x_test=[x_test ones(length(x_test),1)];
+YDash_test=x_test*W';
+hold on;
+plot(YDash_test,'b+');
+plot(W);
+err=lossL2(y_test,YDash_test);

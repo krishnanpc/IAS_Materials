@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{Bengio-2009}
+Yoshua Bengio.
+\newblock Learning deep architectures for {AI}.
+\newblock {\em Foundations and Trends in Machine Learning}, 2(1):1--127, 2009.
+\newblock Also published as a book. Now Publishers, 2009.
+
+\bibitem{Fukushima1988}
+Kunihiko Fukushima.
+\newblock Neocognitron: A hierarchical neural network capable of visual pattern
+  recognition.
+\newblock {\em Neural Networks}, 1(2):119 -- 130, 1988.
+
+\bibitem{FukushimaM82}
+Kunihiko Fukushima and Sei Miyake.
+\newblock Neocognitron: A new algorithm for pattern recognition tolerant of
+  deformations and shifts in position.
+\newblock {\em Pattern Recognition}, 15(6):455--469, 1982.
+
+\bibitem{HintonSalakhutdinov2006b}
+G~E Hinton and R~R Salakhutdinov.
+\newblock Reducing the dimensionality of data with neural networks.
+\newblock {\em Science}, 313(5786):504--507, July 2006.
+
+\bibitem{HintonSejnowski83}
+G.~E. Hinton and T.~J. Sejnowski.
+\newblock Optimal perceptual inference.
+\newblock In {\em Proceedings of the {IEEE} Conference on Computer Vision and
+  Pattern Recognition}, Washington, DC, 1983.
+
+\bibitem{Hinton:2007}
+Geoffrey~E. Hinton.
+\newblock Learning multiple layers of representation.
+\newblock {\em Trends in Cognitive Sciences}, 11:428--434, 2007.
+
+\bibitem{Hinton2006D}
+Geoffrey~E. Hinton, Simon Osindero, and Yee-Whye Teh.
+\newblock A fast learning algorithm for deep belief nets.
+\newblock {\em Neural Comput.}, 18(7):1527--1554, July 2006.
+
+\bibitem{Hubel1959}
+D.~H. HUBEL and T.~N. WIESEL.
+\newblock {Receptive fields of single neurones in the cat's striate cortex.}
+\newblock {\em The Journal of physiology}, 148:574--591, October 1959.
+
+\bibitem{Grainger2008}
+Stéphane~Dufau Jonathan~Grainger, Arnaud~Rey.
+\newblock Letter perception: from pixels to pandemonium.
+\newblock {\em Trends in cognitive sciences}, 12, 2008.
+
+\bibitem{minsky69perceptrons}
+Marvin Minsky and Seymour Papert.
+\newblock {\em Perceptrons: An Introduction to Computational Geometry}.
+\newblock MIT Press, Cambridge, MA, USA, 1969.
+
+\bibitem{Selfridge1958}
+O.~G. Selfridge.
+\newblock {Pandemonium: a paradigm for learning in Mechanisation of Thought
+  Processes}.
+\newblock In {\em Proceedings of a Symposium Held at the National Physical
+  Laboratory}, pages 513--526, London, November 1958. HMSO.
+
+\bibitem{Smolensky86}
+P~Smolensky.
+\newblock Parallel distributed processing: Explorations in the microstructure
+  of cognition, vol. 1: Foundations.
+\newblock chapter Chapter 6: Information Processing in Dynamical Systems:
+  Foundations of Harmony Theory, pages 194–--281. {MIT} Press, 1986.
+
+\bibitem{turing1950computing}
+Alan~M Turing.
+\newblock Computing machinery and intelligence.
+\newblock {\em Mind}, 59(236):433--460, 1950.
+
+\end{thebibliography}

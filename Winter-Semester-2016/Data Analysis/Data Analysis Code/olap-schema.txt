@@ -1,0 +1,48 @@
+Discuss which data should be part of the fact table and which should be an attribute of the dimensions.
+Consider carefully which attribute should be a fact
+
+Fact table: WikiLog
+metric of the fact: TimeSpent
+This is the only measurement identified in the given context.
+And it can be added to all dimensions.
+
+dimension attributes:
+	- Time 
+	- Visitor
+	- Browser
+	- User
+	
+All dimension attributes are foreign keys in the FACT.
+And they all constitute the primary key of the fact.
+
+The dimensions are defined below.
+They all have surrogate keys as primary keys.
+This decision was based on the reference:
+http://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/dimension-surrogate-key/
+
+
+Time
+- TimeKey(PK)
+- Date
+- Month
+- Year
+
+
+User
+- UserKey(PK)
+- UserName
+- IP
+
+Browser
+- BrowserKey(PK)
+- BrowserName
+
+Visitor
+- VisitorKey (PK)
+- IP
+
+Location
+- LocationKey (PK)
+- City
+- Country
+

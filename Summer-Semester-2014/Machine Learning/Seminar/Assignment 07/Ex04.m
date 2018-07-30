@@ -1,0 +1,10 @@
+clear;clc;
+n=500;
+d=2;
+Sigma=[2 -1;-1 2];
+mu=[1 1];
+S1 = chol(Sigma); 
+X = repmat(mu,n,1) + randn(n,d)*S1;
+[V D]=PCA(X);
+Coff =pca(X);
+[Vorg Dorg]=eig(Sigma);

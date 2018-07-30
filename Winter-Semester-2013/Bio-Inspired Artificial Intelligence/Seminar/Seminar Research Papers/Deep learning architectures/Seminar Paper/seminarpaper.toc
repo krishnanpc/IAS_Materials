@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Brief History of Deep Learning}{2}
+\contentsline {section}{\numberline {3}Deep Learning for detection and classification}{6}
+\contentsline {subsection}{\numberline {3.1}Convolutional Deep Belief Networks}{6}
+\contentsline {subsection}{\numberline {3.2}Experimental results for Classification and recognition}{8}
+\contentsline {section}{\numberline {4}Conclusion}{9}
+\contentsline {section}{Bibliography}{10}

@@ -1,0 +1,22 @@
+Simple
+Mean :  112.1316
+Var : 1.6902e+04
+Median : 40.0344
+
+Niche 
+Mean :   24.1123
+Var :  0.1585
+Median :  24.1353
+
+2level
+Mean : 3.7309
+Var: 0.0016
+Median: 3.7348
+
+
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.

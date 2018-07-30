@@ -1,0 +1,23 @@
+clear;clc;
+load('Adot.mat');
+theta = pi/3;
+V = [cos(theta) -sin(theta);sin(theta) cos(theta)];
+Y=V*X;
+plot(X,'r');%plot(X(:,1),X(:,2),'r');
+figure;plot(Y);%plot(Y(:,1),Y(:,2),'b');
+Z=V'*Y;
+% figure;plot(Z);%plot(Z(:,1),Z(:,2),'Y');
+D1=[2 0;0 2];
+D2=[2 0;0 1];
+D3=[1 0;0 2];
+XD1=D1*X;
+XD2=D2*X;
+XD3=D3*X;
+ figure;plot(XD1);%plot(XD1(:,1),XD1(:,2),'k');
+ figure;plot(XD2);%plot(XD2(:,1),XD2(:,2),'g');
+% figure;plot(XD3);%plot(XD2(:,1),XD2(:,2),'g');
+%YD2=D2*Y;
+%figure;plot(YD2)
+A = V'*D2*V;
+XA=A*X;
+figure;plot(XA);%plot(XA(:,1),XA(:,2),'Y');

@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: ./example.aux
+The style file: h-physrev.bst
+Database file #1: mythesis.bib
+You can't pop an empty literal stack for entry cohen2003incentives
+while executing---line 944 of file h-physrev.bst
+You've used 5 entries,
+            1946 wiz_defined-function locations,
+            637 strings with 5840 characters,
+and the built_in function-call counts, 1654 in all, are:
+= -- 149
+> -- 58
+< -- 5
++ -- 18
+- -- 13
+* -- 105
+:= -- 216
+add.period$ -- 5
+call.type$ -- 5
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 97
+empty$ -- 164
+format.name$ -- 18
+if$ -- 404
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 27
+num.names$ -- 5
+pop$ -- 30
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 77
+stack$ -- 0
+substring$ -- 110
+swap$ -- 40
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 17
+width$ -- 6
+write$ -- 60
+(There was 1 error message)

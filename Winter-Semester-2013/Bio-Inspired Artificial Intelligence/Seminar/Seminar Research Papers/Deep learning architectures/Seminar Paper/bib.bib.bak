@@ -1,0 +1,330 @@
+% This file was created with JabRef 2.7b.
+% Encoding: UTF-8
+
+@ARTICLE{Bengio-2009,
+  author = {Bengio, Yoshua},
+  title = {Learning deep architectures for {AI}},
+  journal = {Foundations and Trends in Machine Learning},
+  year = {2009},
+  volume = {2},
+  pages = {1--127},
+  number = {1},
+  note = {Also published as a book. Now Publishers, 2009.},
+  abstract = {Theoretical results suggest that in order to learn the kind of complicated
+	functions that can represent high-level abstractions (e.g. in vision,
+	language, and other AI-level tasks), one may need {\insist deep architectures}.
+	Deep architectures are composed of multiple levels of non-linear
+	operations, such as in neural nets with many hidden layers or in
+	complicated propositional formulae re-using many sub-formulae. Searching
+	the parameter space of deep architectures is a difficult task, but
+	learning algorithms such as those for Deep Belief Networks have recently
+	been proposed to tackle this problem with notable success, beating
+	the state-of-the-art in certain areas. This paper discusses the motivations
+	and principles regarding learning algorithms for deep architectures,
+	in particular those exploiting as building blocks unsupervised learning
+	of single-layer models such as Restricted Boltzmann Machines, used
+	to construct deeper models such as Deep Belief Networks.},
+  doi = {10.1561/2200000006}
+}
+
+@OTHER{Coates,
+  __markedentry = {[alisaleh:6]},
+  abstract = {A great deal of research has focused on algorithms for learning features
+	from unlabeled data. Indeed, much progress has been made on benchmark
+	datasets like NORB and CIFAR by employing increasingly complex unsupervised
+	learning algorithms and deep models. In this paper, however, we show
+	that several very simple factors, such as the number of hidden nodes
+	in the model, may be as important to achieving high performance as
+	the choice of learning algorithm or the depth of the model. Specifically,
+	we will apply several off-the-shelf feature learning algorithms (sparse
+	auto-encoders, sparse RBMs and K-means clustering, Gaussian mixtures)
+	to NORB and CIFAR datasets using only single-layer networks. We then
+	present a detailed analysis of the effect of changes in the model
+	setup: the receptive field size, number of hidden nodes (features),
+	the step-size (“stride”) between extracted features, and the effect
+	of whitening. Our results show that large numbers of hidden nodes
+	and dense feature extraction are as critical to achieving high performance
+	as the choice of algorithm itself—so critical, in fact, that when
+	these parameters are pushed to their limits, we are able to achieve
+	state-of-theart performance on both CIFAR and NORB using only a single
+	layer of features. More surprisingly, our best performance is based
+	on K-means clustering, which is extremely fast, has no hyper-parameters
+	to tune beyond the model structure itself, and is very easy implement.
+	Despite the simplicity of our system, we achieve performance beyond
+	all previously published results on the CIFAR-10 and NORB datasets
+	(79.6 % and 97.0 % accuracy respectively). 1},
+  author = {Coates, Adam and Lee, Honglak and Andrew Y. Ng},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {An Analysis of Single-Layer Networks in Unsupervised Feature Learning}
+}
+
+@OTHER{DavidM.Bradley,
+  __markedentry = {[alisaleh:6]},
+  abstract = {Prior work has shown that features which appear to be biologically
+	plausible as well as empirically useful can be found by sparse coding
+	with a prior such as a laplacian (L1) that promotes sparsity. We
+	show how smoother priors can preserve the benefits of these sparse
+	priors while adding stability to the Maximum A-Posteriori (MAP) estimate
+	that makes it more useful for prediction problems. Additionally,
+	we show how to calculate the derivative of the MAP estimate efficiently
+	with implicit differentiation. One prior that can be differentiated
+	this way is KL-regularization. We demonstrate its effectiveness on
+	a wide variety of applications, and find that online optimization
+	of the parameters of the KL-regularized model can significantly improve
+	prediction performance. 1},
+  author = {David M. Bradley, J. Andrew Bagnell},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {Differentiable Sparse Coding}
+}
+
+@OTHER{Delage2006,
+  __markedentry = {[alisaleh:6]},
+  abstract = {indoor image},
+  author = {Delage, Erick and Lee, Honglak and Andrew Y. Ng},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {A dynamic bayesian network model for autonomous 3d reconstruction
+	from a single indoor image},
+  year = {2006}
+}
+
+@OTHER{Delage2005,
+  __markedentry = {[alisaleh:6]},
+  abstract = {Summary. 3d reconstruction from a single image is inherently an ambiguous
+	problem. Yet when we look at a picture, we can often infer 3d information
+	about the scene. Humans perform single-image 3d reconstructions by
+	using a variety of singleimage depth cues, for example, by recognizing
+	objects and surfaces, and reasoning about how these surfaces are
+	connected to each other. In this paper, we focus on the problem of
+	automatic 3d reconstruction of indoor scenes, specifically ones (sometimes
+	called “Manhattan worlds”) that consist mainly of orthogonal planes.
+	We use a Markov random field (MRF) model to identify the different
+	planes and edges in the scene, as well as their orientations. Then,
+	an iterative optimization algorithm is applied to infer the most
+	probable position of all the planes, and thereby obtain a 3d reconstruction.
+	Our approach is fully automatic—given an input image, no human intervention
+	is necessary to obtain an approximate 3d reconstruction. 1},
+  author = {Delage, Erick and Lee, Honglak and Andrew Y. Ng},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {Automatic single-image 3d reconstructions of indoor manhattan world
+	scenes},
+  year = {2005}
+}
+
+@OTHER{Ekanadham2008,
+  __markedentry = {[alisaleh:6]},
+  abstract = {Abstract 1 Motivated in part by the hierarchical organization of the
+	neocortex, a number of recently proposed algorithms have tried to
+	learn hierarchical, or “deep, ” structure from unlabeled data. While
+	several authors have formally or informally compared their algorithms
+	to computations performed in visual area V1 (and the cochlea), little
+	attempt has been made thus far to evaluate these algorithms in terms
+	of their fidelity for mimicking computations at deeper levels in
+	the cortical hierarchy. This thesis describes an unsupervised learning
+	model that faithfully mimics certain properties of visual area V2.
+	Specifically, we develop a sparse variant of the deep belief networks
+	described by Hinton et al. (2006). We learn two layers of representation
+	in the network, and demonstrate that the first layer, similar to
+	prior work on sparse coding and ICA, results in localized, oriented,
+	edge filters, similar to the gabor functions known to model simple
+	cell receptive fields in area V1. Further, the second layer in our
+	model encodes various combinations of the first layer responses in
+	the data. Specifically, it picks up both collinear (“contour”) features
+	as well as corners and junctions. More interestingly, in a quantitative
+	comparison, the encoding of these more complex “corner ” features
+	matches well with the results from Ito &amp; Komatsu’s study of neural
+	responses to angular stimuli in area V2 of the macaque. This suggests
+	that our sparse variant of deep belief networks holds promise for
+	modeling more higher-order features that are encoded in visual cortex.
+	Conversely, one may also interpret the results reported here as suggestive
+	that visual area V2 is performing computations on its input similar
+	to those performed in (sparse) deep belief networks. This plausible
+	relationship generates some intriguing hypotheses about V2 computations.
+	1 This thesis is an extended version of an earlier paper by Honglak
+	Lee, Chaitanya Ekanadham, and Andrew Ng titled “Sparse deep belief
+	net model for visual area V2.” 1},
+  author = {Ekanadham, Chaitanya},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {Sparse deep belief net model for visual area V2},
+  year = {2008}
+}
+
+@ARTICLE{DBLP:journals/pr/FukushimaM82,
+  author = {Kunihiko Fukushima and Sei Miyake},
+  title = {Neocognitron: A new algorithm for pattern recognition tolerant of
+	deformations and shifts in position},
+  journal = {Pattern Recognition},
+  year = {1982},
+  volume = {15},
+  pages = {455-469},
+  number = {6},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  ee = {http://dx.doi.org/10.1016/0031-3203(82)90024-3}
+}
+
+@ARTICLE{HintonSalakhutdinov2006b,
+  author = {Hinton, G E and Salakhutdinov, R R},
+  title = {Reducing the dimensionality of data with neural networks},
+  journal = {Science},
+  year = {2006},
+  volume = {313},
+  pages = {504-507},
+  number = {5786},
+  month = Jul,
+  abstract = {High-dimensional data can be converted to low-dimensional codes by
+	training a multilayer neural network with a small central layer to
+	reconstruct high-dimensional input vectors. Gradient descent can
+	be used for fine-tuning the weights in such "autoencoder" networks,
+	but this works well only if the initial weights are close to a good
+	solution. We describe an effective way of initializing the weights
+	that allows deep autoencoder networks to learn low-dimensional codes
+	that work much better than principal components analysis as a tool
+	to reduce the dimensionality of data.},
+  added-at = {2008-07-15T10:05:18.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2135bbce97b449ddf5fca7be88102b53c/tmalsburg},
+  description = {Reducing the dimensionality of data with neural ne...[Science. 2006]
+	- PubMed Result},
+  doi = {10.1126/science.1127647},
+  interhash = {019918b82518b74f443a22dc58a0117f},
+  intrahash = {135bbce97b449ddf5fca7be88102b53c},
+  keywords = {dimensionalityreduction neuralnetworks parameterestimation},
+  pmid = {16873662},
+  timestamp = {2008-07-15T10:05:18.000+0200},
+  url = {http://www.ncbi.nlm.nih.gov/sites/entrez?db=pubmed&uid=16873662&cmd=showdetailview&indexed=google}
+}
+
+@OTHER{Lee2007,
+  __markedentry = {[alisaleh:6]},
+  abstract = {Sparse coding provides a class of algorithms for finding succinct
+	representations of stimuli; given only unlabeled input data, it discovers
+	basis functions that capture higher-level features in the data. However,
+	finding sparse codes remains a very difficult computational problem.
+	In this paper, we present efficient sparse coding algorithms that
+	are based on iteratively solving two convex optimization problems:
+	an L1-regularized least squares problem and an L2-constrained least
+	squares problem. We propose novel algorithms to solve both of these
+	optimization problems. Our algorithms result in a significant speedup
+	for sparse coding, allowing us to learn larger sparse codes than
+	possible with previously described algorithms. We apply these algorithms
+	to natural images and demonstrate that the inferred sparse codes
+	exhibit end-stopping and non-classical receptive field surround suppression
+	and, therefore, may provide a partial explanation for these two phenomena
+	in V1 neurons. 1},
+  author = {Lee, Honglak and Battle, Alexis and Raina, Rajat and Andrew Y. Ng},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {Efficient sparse coding algorithms},
+  year = {2007}
+}
+
+@OTHER{Lee,
+  __markedentry = {[alisaleh:6]},
+  abstract = {There has been much interest in unsupervised learning of hierarchical
+	generative models such as deep belief networks. Scaling such models
+	to full-sized, high-dimensional images remains a difficult problem.
+	To address this problem, we present the convolutional deep belief
+	network, a hierarchical generative model which scales to realistic
+	image sizes. This model is translation-invariant and supports efficient
+	bottom-up and top-down probabilistic inference. Key to our approach
+	is probabilistic max-pooling, a novel technique which shrinks the
+	representations of higher layers in a probabilistically sound way.
+	Our experiments show that the algorithm learns useful high-level
+	visual features, such as object parts, from unlabeled images of objects
+	and natural scenes. We demonstrate excellent performance on several
+	visual recognition tasks and show that our model can perform hierarchical
+	(bottom-up and top-down) inference over full-sized images. 1.},
+  author = {Lee, Honglak and Grosse, Roger and Ranganath, Rajesh and Andrew Y.
+	Ng},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {Convolutional Deep Belief Networks for Scalable Unsupervised Learning
+	of Hierarchical Representations}
+}
+
+@OTHER{Lee2006,
+  __markedentry = {[alisaleh:6]},
+  abstract = {L1 regularized logistic regression is now a workhorse of machine learning:
+	it is widely used for many classification problems, particularly
+	ones with many features. L1 regularized logistic regression requires
+	solving a convex optimization problem. However, standard algorithms
+	for solving convex optimization problems do not scale well enough
+	to handle the large datasets encountered in many practical settings.
+	In this paper, we propose an efficient algorithm for L1 regularized
+	logistic regression. Our algorithm iteratively approximates the objective
+	function by a quadratic approximation at the current point, while
+	maintaining the L1 constraint. In each iteration, it uses the efficient
+	LARS (Least Angle Regression) algorithm to solve the resulting L1
+	constrained quadratic optimization problem. Our theoretical results
+	show that our algorithm is guaranteed to converge to the global optimum.
+	Our experiments show that our algorithm significantly outperforms
+	standard algorithms for solving convex optimization problems. Moreover,
+	our algorithm outperforms four previously published algorithms that
+	were specifically designed to solve the L1 regularized logistic regression
+	problem.},
+  author = {Su-in Lee and Lee, Honglak and Abbeel, Pieter and Andrew Y. Ng},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {Efficient l1 regularized logistic regression},
+  year = {2006}
+}
+
+@BOOK{Leunen:Scholars:92,
+  title = {A Handbook for Scholars},
+  publisher = {Oxford University Press},
+  year = {1992},
+  author = {M.-C. van Leunen}
+}
+
+@OTHER{Raina2007,
+  __markedentry = {[alisaleh:6]},
+  abstract = {We present a new machine learning framework called “self-taught learning
+	” for using unlabeled data in supervised classification tasks. We
+	do not assume that the unlabeled data follows the same class labels
+	or generative distribution as the labeled data. Thus, we would like
+	to use a large number of unlabeled images (or audio samples, or text
+	documents) randomly downloaded from the Internet to improve performance
+	on a given image (or audio, or text) classification task. Such unlabeled
+	data is significantly easier to obtain than in typical semi-supervised
+	or transfer learning settings, making selftaught learning widely
+	applicable to many practical learning problems. We describe an approach
+	to self-taught learning that uses sparse coding to construct higher-level
+	features using the unlabeled data. These features form a succinct
+	input representation and significantly improve classification performance.
+	When using an SVM for classification, we further show how a Fisher
+	kernel can be learned for this representation. 1.},
+  author = {Raina, Rajat and Battle, Alexis and Lee, Honglak and Packer, Benjamin
+	and Andrew Y. Ng},
+  owner = {alisaleh},
+  timestamp = {2013.12.17},
+  title = {Self-taught learning: Transfer learning from unlabeled data},
+  year = {2007}
+}
+
+@MISC{Taylor:SIGuide:95,
+  author = {B. N. Taylor},
+  title = {Guide for the Use of the International System of Units (SI)},
+  howpublished = {NIST Special Publication 811},
+  year = {1995},
+  note = {\url{http://physics.nist.gov/Document/sp811.pdf}}
+}
+
+@ARTICLE{turing1950computing,
+  author = {Turing, Alan M},
+  title = {Computing machinery and intelligence},
+  journal = {Mind},
+  year = {1950},
+  volume = {59},
+  pages = {433--460},
+  number = {236},
+  publisher = {JSTOR}
+}
+
+@ARTICLE{,
+  owner = {3saleh},
+  timestamp = {2014.01.22}
+}
+

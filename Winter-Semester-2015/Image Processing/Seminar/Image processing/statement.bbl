@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{Hinaut2013}
+Xavier Hinaut and Peter~Ford Dominey.
+\newblock Real-time parallel processing of grammatical structure in the
+  fronto-striatal system: A recurrent network simulation study using reservoir
+  computing.
+\newblock {\em PLoS ONE}, 8(2):e52946, 02 2013.
+
+\bibitem{Hinaut2014}
+Xavier Hinaut, Maxime Petit, Grégoire Pointeau, and Peter~F Dominey.
+\newblock Exploring the acquisition and production of grammatical constructions
+  through human-robot interaction with echo state networks.
+\newblock {\em Frontiers in Neurorobotics}, 8(16), 2014.
+
+\end{thebibliography}

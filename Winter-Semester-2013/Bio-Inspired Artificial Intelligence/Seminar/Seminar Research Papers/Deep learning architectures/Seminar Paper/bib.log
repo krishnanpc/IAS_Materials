@@ -1,0 +1,37 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdftex 2014.5.17)  17 MAY 2014 22:17
+entering extended mode
+**D:/Study/IAS/Winter*Semester*2013/Bio-Inspired*Artificial*Intelligence/Semina
+r/Seminar*Research*Papers/Deep*learning*architectures/Seminar*Paper/bib.bib
+
+("D:/Study/IAS/Winter Semester 2013/Bio-Inspired Artificial Intelligence/Semina
+r/Seminar Research Papers/Deep learning architectures/Seminar Paper/bib.bib"
+Overfull \hbox (102.02426pt too wide) in paragraph at lines 12--26
+\tenrm = http://www.bibsonomy.org/bibtex/2c7ff66cb52890a6bd3a4be938dc4c755/dblp
+, in-ter-hash = 061bc278e87bb8bf80b1938c029a8866,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm =
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm h
+.\kern-0.27779
+.\tenrm t
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.89 @MISC{Socher_
+                  parsingnatural,
+? 
+! Emergency stop.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.89 @MISC{Socher_
+                  parsingnatural,
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

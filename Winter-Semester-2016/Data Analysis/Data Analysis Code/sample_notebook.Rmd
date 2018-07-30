@@ -1,0 +1,299 @@
+---
+title: "Chicago Crimes Analysis"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document: default
+---
+
+This is Chicago Crimes sample:
+
+1.  When do crimes occur?
+
+2.  Which time of day, which time of year?
+
+3.  Which type of crimes occur at which time?
+
+
+<br/>
+
+
+#### Filter data?
+```{r}
+#install.packages(
+#  'printr',
+#  type = 'source',
+#  repos = c('http://yihui.name/xran', 'http://cran.rstudio.com')
+#)
+
+library(printr)
+mydata <- read.csv("chicago_crimes_sample.csv")
+head(mydata[1:10], 5)
+head(mydata[11:22], 5)
+
+```
+
+
+<br/>
+
+
+<br/>
+
+
+I used https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2/data which explains each column, to leave no room for doubts/speculations.
+
+Hence - In my opinion - it's safe to remove the following columns:
+```{r message=FALSE}
+mydata <- within(mydata, rm(
+           "ID",              # Is unique
+           "Case.Number",     # Also unique (no correlation/info)
+           "Block",           # Address is pointless when you have exact coordinates
+           "IUCR",            # Code for Crime descrition (Primary + secondary descriptions)
+           "Beat",            # Correlation can be made with number of police beats and number of crimes (yet not needed for the task)
+           "District",        # Useful only if we can group by Districts
+           "Ward",            # Useful only if we can group by Wards
+           "FBI.Code",        # Unique ID for FBI (information has to be joined with another table)
+           "Community.Area",  # Useful to identify areas with highest crime rate, yet no temporal analysis 
+           "X.Coordinate",    # Pointless when long/lat exists
+           "Y.Coordinate",    # Same
+           "Updated.On",      # doesn't add any value
+           "Location"         # Pointless when long/lat exists
+))
+
+
+```
+
+******
+<br/>
+
+#### Analysis Questions
+##### - What are the most common crimes between **`r min(mydata$Year)`** and **`r max(mydata$Year)`**?
+```{r}
+library(ggplot2)
+library(plyr)
+
+crime_freq <- count(mydata, 'Primary.Type')
+# take top 7
+crime_freq <- crime_freq[with(crime_freq, order(-freq)), ][1:7,]
+
+ggplot(crime_freq, aes(x="", y=freq, fill=Primary.Type)) +
+   geom_bar(width = 1, stat = "identity") +
+   coord_polar("y", start=0) +
+   labs(title = "Top 7 crimes") +
+   labs(x = "Frequency") +
+   labs(y = "") + 
+   labs(colour = "blah") +
+    scale_fill_discrete(name="Crime type")
+
+
+```
+
+**Assault** and **Battery** forms almost half of the crimes that took place between `r min(mydata$Year)` and `r max(mydata$Year)`.
+
+<br/>
+
+##### - Crime rate over time? is police doing a nice job?
+```{r}
+library(ggplot2)
+library(plyr)
+
+# remove 2016 before plotting
+ggplot(mydata[!mydata$Year == 2016, ], aes(factor(Year))) +
+  geom_bar() +
+  labs(title = "Crime Rate") +
+  labs(x = "Years") +
+  labs(y = "Frequency") 
+
+
+```
+
+Crime rate **is** decreasing over the years, one hypothesis is that number of Beats may have increased. However, a second csv file has to be provided to decypher the Beat column.
+
+Note: 2016 was excluded for year-to-year comparison consistency.
+
+<br/>
+
+#### When do crimes occur? Daily? weekly? yearly? 
+```{r message=FALSE, cache=FALSE}
+# install.packages("lubridate", dependencies = TRUE) 
+library(lubridate)
+```
+```{r warning = FALSE}
+mydata$Date <- parse_date_time(mydata$Date,"mdy hmsp") 
+
+ggplot(mydata[!is.na(mydata$Date), ], aes(factor( format(Date, format = "%H")))) +
+  geom_bar() +
+  labs(title = "Crime Rate over the day") +
+  labs(x = "Hours") +
+  labs(y = "Frequency") 
+
+
+```
+
+<br/>
+
+Crimes take place mostly around 12 O'clock, 9pm and Midnight on a daily basis.
+
+<br/>
+
+```{r warning = FALSE}
+
+week_days <- c("Monday","Tuesday","Wednesday",
+              "Thursday","Friday","Saturday",
+              "Sunday")
+
+ggplot(mydata[!is.na(mydata$Date), ], aes(factor( format(Date, format = "%A"), levels = week_days ))) +
+  geom_bar() +
+  labs(title = "Crime Rate over the day") +
+  labs(x = "Days of the week") +
+  labs(y = "Frequency") 
+```
+
+<br/>
+
+There is no concrete data that can be inferred from the distribution of crime rate across the week (except that rate is lower on Sundays).
+
+<br/>
+
+```{r warning = FALSE, fig.height=7.5, fig.width = 10.5}
+mymonths <- c("Jan","Feb","Mar",
+              "Apr","May","Jun",
+              "Jul","Aug","Sep",
+              "Oct","Nov","Dec")
+
+ggplot(mydata[!is.na(mydata$Date), ], aes(factor( as.numeric(strftime(Date, format = "%j")) ))) +
+  scale_x_discrete(breaks = seq(0,356,10)) +
+  geom_bar( aes(fill=factor( strftime(Date, format = "%b"), levels = mymonths )) ) +
+  labs(title = "Crime Rate over the Year") +
+  labs(x = "Days of the Year") +
+  labs(y = "Frequency") +
+  theme(legend.title=element_blank())
+```
+<br/>
+
+Most crimes take place around Christimas, Halloween, and the first weekend of the month. 
+
+<br/>
+
+#### Which type of crimes occur at which time?
+```{r}
+#install.packages('ggmap')
+```
+```{r fig.height=12.5, fig.width = 10.5}
+
+#take top 10
+crime_freq <- count(mydata, 'Primary.Type')
+crime_freq <- crime_freq[with(crime_freq, order(-freq)), ][1:10,]
+
+top_10_df <- mydata[mydata$Primary.Type %in% crime_freq$Primary.Type, ]
+
+top_10_df$DayHour <- format(top_10_df$Date, format = "%H")
+
+top_10 <- count(top_10_df, c("Primary.Type", "DayHour"))
+
+#use data.tables (sql behavior, to calculate cumsum per group)
+library(data.table)
+DT <- data.table(top_10)
+top_10 <- DT[, Cum.Sum := cumsum(freq), by=list(DayHour)]
+
+#use group cumsum to draw the freq in it's correct place
+ggplot(top_10, aes(x = DayHour, y = freq)) +
+  geom_bar(aes(fill = Primary.Type), stat="identity") +
+  geom_text(aes(label = freq, y = Cum.Sum - freq*0.5), size = 3) 
+  
+
+
+```
+
+<br/>
+
+1) Assault is highest around mid-day.
+2) Battery is highest around 15:00.
+3) Robbery is highest around 16:00.
+
+<br/>
+
+```{r}
+install.packages('ggmap')
+```
+```{r fig.height=9.5, fig.width = 10.5}
+week_days <- c("Monday","Tuesday","Wednesday",
+              "Thursday","Friday","Saturday",
+              "Sunday")
+
+#take top 10
+crime_freq <- count(mydata, 'Primary.Type')
+crime_freq <- crime_freq[with(crime_freq, order(-freq)), ][1:12,]
+
+top_10_df <- mydata[mydata$Primary.Type %in% crime_freq$Primary.Type, ]
+
+top_10_df$DayWeek <- format(top_10_df$Date, format = "%A")
+
+top_10 <- count(top_10_df, c("Primary.Type", "DayWeek"))
+
+#use data.tables (sql behavior, to calculate cumsum per group)
+library(data.table)
+DT <- data.table(top_10)
+top_10 <- DT[, Cum.Sum := cumsum(freq), by=list(DayWeek)]
+
+#use group cumsum to draw the freq in it's correct place
+ggplot(top_10, aes(x = DayWeek, y = freq)) +
+  geom_bar(aes(fill = Primary.Type), stat="identity") +
+  geom_text(aes(label = freq, y = Cum.Sum - freq*0.5), size = 3)  +
+  scale_x_discrete(limits = week_days)
+
+
+```
+
+<br/>
+
+1) Prostition is highest around mid-week.
+2) Thefts and Criminal Damages are highest on Saturdays.
+3) Other types looks relatively evenly distributed.
+
+<br/>
+
+******
+##### Spatial Hypotheses: Safest place in town as a tourist?
+```{r}
+#install.packages('ggmap')
+```
+```{r message=FALSE, cache=FALSE}
+library(ggmap)
+chicago <- get_map(location = 'chicago', zoom = 10)
+```
+
+```{r warning=FALSE, fig.height= 10,fig.width=10}
+THEFT_ASSAULT <- mydata[mydata$Primary.Type %in% c("ASSAULT","THEFT"), ]
+
+ggmap(chicago, extent = "device") + geom_point(aes(x = Longitude, y = Latitude), colour = "red", 
+    alpha = 0.1, size = 2, data = THEFT_ASSAULT)
+```
+
+It's safe to assume that tourists should avoid Northside and Rosemont.
+
+<br/>
+
+<br/>
+
+##### Fun Hypothesis: Is there a secret Reeperbahn in Chicago?
+
+We can start by visualizing the dataset on chicago map (Googled: heatmaps googlemaps in R)
+```{r}
+install.packages('ggmap')
+```
+```{r message=FALSE, cache=FALSE}
+library(ggmap)
+chicago <- get_map(location = 'chicago', zoom = 10)
+```
+
+```{r warning=FALSE, fig.height= 10,fig.width=10}
+PROSTITUTION_CHARGES <- mydata[mydata$Primary.Type == "PROSTITUTION", ]
+
+ggmap(chicago, extent = "device") + geom_point(aes(x = Longitude, y = Latitude), colour = "red", 
+    alpha = 0.1, size = 2, data = PROSTITUTION_CHARGES)
+```
+
+Since I'm using the sample data, There is no cluster of incidents that can point out a secret Reeberbahn, maybe cause Prostitutes avoid places where fellow-colleagues have been caught in.
+
+
